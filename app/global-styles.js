@@ -29,8 +29,15 @@ injectGlobal`
   	text-decoration: none;
   }
   nav a:hover {
-    color: #3A1F00 !important;
+    color: darkred !important;
   }
+  a.anchor {
+    color: #6F4E37;
+    font-size: 20px;
+}
+a.anchor:hover {
+  color: darkred;
+}
   p,
   label {
     font-family: Georgia, Times, 'Times New Roman', serif;
