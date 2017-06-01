@@ -31,7 +31,6 @@ export default class Home extends React.PureComponent {
       flexDirection: "row",
       flexWrap: "wrap",
       flexGrow: "1",
-      borderTop: "1px solid black"
     };
     const main={
       width: "100%",
@@ -42,7 +41,7 @@ export default class Home extends React.PureComponent {
       flexDirection: "column",
     };
     const subscriptionBox={
-      background: "url(http://i1065.photobucket.com/albums/u395/monkeyzealer/robots-pattern-design_1131-2_zps3k2jjg3o.png)",
+      background: "url(http://h4z.it/Image/c4d379_esign_1131-2.png)",
       width: "100%",
       height: "500px",
       paddingTop: "20px",
@@ -202,9 +201,6 @@ export default class Home extends React.PureComponent {
     const anchorHeader={
       margin: "0"
     }
-    const background={
-      background: "#F7E7CE"
-    }
     const footerStyle ={
       alignSelf: "flex-end",
     };
@@ -286,7 +282,7 @@ export default class Home extends React.PureComponent {
   },
 };
 const subscriptionBoxMobile={
-  background: "url(http://i1065.photobucket.com/albums/u395/monkeyzealer/robots-pattern-design_1131-2_zps3k2jjg3o.png)",
+  background: "url(http://h4z.it/Image/c4d379_esign_1131-2.png)",
   width: "100%",
   height: "auto",
   paddingTop: "20px",
@@ -336,16 +332,37 @@ const partnerBoxMobile={
   paddingTop: "20px",
   paddingBottom: "0px"
 }
+const TitleMobile={
+  background: "#AC8655",
+  padding: "20px",
+  color: "white",
+  borderTop: "1px solid black",
+  borderBottom: "1px Solid Black",
+  textAlign: "center"
+}
+const Links={
+  color: "#6F4E37",
+  marginTop: "0"
+}
+const topLink={
+  top: "-3px",
+  position: "relative",
+  float: "right",
+    padding: "15px"
+}
+const topLinkMobile={
+  textAlign: "center"
+}
     return (
       <div style={Container}>
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
-        <Header />
+        <Header id="top"/>
         <Responsive minDeviceWidth={1024}>
         <main style={mainContainer}>
           <div style={main}>
             <div style={subscriptionBox}>
                <div style={subscription}>
-                <div style={subscriptionImage}><img style={{width: '660px', margin: '30px' }} src="http://i1065.photobucket.com/albums/u395/monkeyzealer/kit_zpsyfrratgz.png" /></div>
+                <div style={subscriptionImage}><img style={{width: '660px', margin: '30px' }} src="http://h4z.it/Image/82e8fe_kit.png" /></div>
                 <div style={subscriptionContent}>
                   <h1 style={SubHeader}><div style={headerTitle}>BUILD YOUR OWN</div>ROBOT AT HOME!</h1>
                   <p style={SubContent}>Box Robot is a subscription service that delivers Robot kits to your door every month.</p>
@@ -355,30 +372,30 @@ const partnerBoxMobile={
             </div>
             <div style={anchorBox}>
               <div style={anchor}>
+              <h1 style={Links}>Links<hr /></h1>
               <h4 style={anchorHeader}><a style={anchorLink} className="anchor" href="#how">How Box Robot Works</a><a style={anchorLink} className="anchor" href="#FAQ">FAQ</a><a style={anchorLink} className="anchor" href="#partner">Partners</a></h4>
               </div>
             </div>
               <div style={Title}>
-              <h1 id="how">How Box Robot Works</h1>
+              <h1 id="how">How Box Robot Works <a style={topLink} className="top" href="#top">Back to Top</a></h1>
               </div>
               <div style={aboutBox}>
-                <div style={about1}><img style={{width: '80%'}} src="http://i1065.photobucket.com/albums/u395/monkeyzealer/community_zpszau175lb.png" />
+                <div style={about1}><img style={{width: '80%'}} src="http://h4z.it/Image/07ec16_community.png" />
                 <h4 style={AboutTitle}>Build Fun Devices</h4>
                 <p style={AboutParagraph}>Subscribe to Box Robot and receive a different robot project every month.</p>
                 </div>
-                <div style={about2}><img style={{width: '80%'}} src="http://i1065.photobucket.com/albums/u395/monkeyzealer/learning_app_zpsyfprm30t.png" />
+                <div style={about2}><img style={{width: '80%'}} src="http://h4z.it/Image/f8503b_learning_app.png" />
                 <h4 style={AboutTitle}>Guided Instructions</h4>
                 <p style={AboutParagraph}>Once you receive your kit, sign into our Learning Platform and follow simple video instructions and code lessons.</p>
                 </div>
-                <div style={about3}><img style={{width: '80%'}} src="http://i1065.photobucket.com/albums/u395/monkeyzealer/gift_zpsyer3sbtg.png" />
+                <div style={about3}><img style={{width: '80%'}} src="http://h4z.it/Image/032d2a_gift.png" />
                 <h4 style={AboutTitle}>Get Creative</h4>
                 <p style={AboutParagraph}>Customize your finished project to improve your skills and share with the community.</p>
                 </div>
               </div>
             <div style={Title}>
-            <h1 id="FAQ">Frequently Asked Questions</h1>
+            <h1 id="FAQ">Frequently Asked Questions <a style={topLink} className="top" href="#top">Back to Top</a></h1>
             </div>
-
             <div style={FAQBox}>
             <h3 style={FAQTitle}>What is Box Robot</h3>
             <p style={FAQParagraph}>Box Robot teaches beginners a basic understanding of building Robots through a monthly kit with carefully curated and easy to follow instructions.
@@ -476,7 +493,7 @@ const partnerBoxMobile={
 
             </div>
             <div style={Title}>
-            <h1 id="partner">Partnered With</h1>
+            <h1 id="partner">Partnered With<a style={topLink} className="top" href="#top">Back to Top</a></h1>
             </div>
             <div style={partnerBox}>
               <div style={partner1}>
@@ -500,7 +517,7 @@ const partnerBoxMobile={
           <div style={main}>
             <div style={subscriptionBoxMobile}>
                <div style={subscriptionMobile}>
-                <div style={subscriptionImage}><img style={{width: '90%'}} src="http://i1065.photobucket.com/albums/u395/monkeyzealer/kit_zpsyfrratgz.png" /></div>
+                <div style={subscriptionImage}><img style={{width: '90%'}} src="http://h4z.it/Image/82e8fe_kit.png" /></div>
                 <div style={subscriptionContentMobile}>
                   <h1 style={SubHeader}><div style={headerTitle}>BUILD YOUR OWN</div>ROBOT AT HOME!</h1>
                   <p style={SubContent}>Box Robot is a subscription service that delivers Robot kits to your door every month.</p>
@@ -510,30 +527,32 @@ const partnerBoxMobile={
             </div>
             <div style={anchorBox}>
               <div style={anchor}>
-              <h4 style={anchorHeader}><a style={anchorLink} className="anchor" href="#how">How Box Robot Works</a><a style={anchorLink} className="anchor" href="#FAQ">FAQ</a><a style={anchorLink} className="anchor" href="#partner">Partners</a></h4>
+              <h1 style={Links}>Links<hr /></h1>
+              <h4 style={anchorHeader}><p><a style={anchorLink} className="anchor" href="#how">How Box Robot Works</a></p><p><a style={anchorLink} className="anchor" href="#FAQ">FAQ</a></p><p><a style={anchorLink} className="anchor" href="#partner">Partners</a></p></h4>
               </div>
             </div>
-              <div style={Title}>
-              <h1 id="how">How Box Robot Works</h1>
+              <div style={TitleMobile}>
+              <h2 id="how">How Box Robot Works</h2>
+              <p><a style={topLinkMobile} className="top" href="#top">Back to Top</a></p>
               </div>
               <div style={aboutBoxMobile}>
-                <div style={aboutMobile}><img style={{width: '80%'}} src="http://i1065.photobucket.com/albums/u395/monkeyzealer/community_zpszau175lb.png" />
+                <div style={aboutMobile}><img style={{width: '80%'}} src="http://h4z.it/Image/07ec16_community.png" />
                 <h4 style={AboutTitle}>Build Fun Devices</h4>
                 <p style={AboutParagraph}>Subscribe to Box Robot and receive a different robot project every month.</p>
                 </div>
-                <div style={aboutMobile}><img style={{width: '80%'}} src="http://i1065.photobucket.com/albums/u395/monkeyzealer/learning_app_zpsyfprm30t.png" />
+                <div style={aboutMobile}><img style={{width: '80%'}} src="http://h4z.it/Image/f8503b_learning_app.png" />
                 <h4 style={AboutTitle}>Guided Instructions</h4>
                 <p style={AboutParagraph}>Once you receive your kit, sign into our Learning Platform and follow simple video instructions and code lessons.</p>
                 </div>
-                <div style={aboutMobile}><img style={{width: '80%'}} src="http://i1065.photobucket.com/albums/u395/monkeyzealer/gift_zpsyer3sbtg.png" />
+                <div style={aboutMobile}><img style={{width: '80%'}} src="http://h4z.it/Image/032d2a_gift.png" />
                 <h4 style={AboutTitle}>Get Creative</h4>
                 <p style={AboutParagraph}>Customize your finished project to improve your skills and share with the community.</p>
                 </div>
               </div>
-            <div style={Title}>
-            <h1 id="FAQ">Frequently Asked Questions</h1>
+            <div style={TitleMobile}>
+            <h2 id="FAQ">Frequently Asked Questions</h2>
+              <p><a style={topLinkMobile} className="top" href="#top">Back to Top</a></p>
             </div>
-
             <div style={FAQBox}>
             <h3 style={FAQTitle}>What is Box Robot</h3>
             <p style={FAQParagraph}>Box Robot teaches beginners a basic understanding of building Robots through a monthly kit with carefully curated and easy to follow instructions.
@@ -628,10 +647,10 @@ const partnerBoxMobile={
             We hate to see you go. You can cancel a monthly subscription anytime after the first kit ships by using our online account management tool.
             Auto-renewing subscriptions (pay every 3, 6, 12 months) are only eligible for cancellation after the initial term has been completed.
             </p>
-
             </div>
-            <div style={Title}>
-            <h1 id="partner">Partnered With</h1>
+            <div style={TitleMobile}>
+            <h2 id="partner">Partnered With</h2>
+              <p><a style={topLinkMobile} className="top" href="#top">Back to Top</a></p>
             </div>
             <div style={partnerBoxMobile}>
               <div style={partnerMobile}>

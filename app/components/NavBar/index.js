@@ -9,7 +9,7 @@ import {Link} from 'react-router';
 import Responsive from 'react-responsive';
 import Menu from 'material-ui/svg-icons/navigation/menu';
 import IconButton from 'material-ui/IconButton';
-import {blue500, darkred500, greenA200} from 'material-ui/styles/colors';
+import {blue500, wheat500, greenA200} from 'material-ui/styles/colors';
 
 class NavBar extends React.PureComponent {
   constructor(props)
@@ -44,9 +44,10 @@ class NavBar extends React.PureComponent {
       const navLink = {
         padding:"5px",
         border: "1px solid white",
-        background: "black",
+        background: "burlywood",
         textDecoration: "none",
         fontWeight: "bold",
+        color: "#3A1F00"
       }
       const nav = {
         display:"flex",
@@ -58,9 +59,9 @@ class NavBar extends React.PureComponent {
         marginBottom: "15px"
       }
 
-      var storeLink = <Link activeStyle={{color:'darkred'}} to="/store" style={navLink}>Store</Link>;
+      var storeLink = <Link activeStyle={{color:'wheat'}} to="/store" style={navLink}>Store</Link>;
 
-      var signOutLink = <Link activeStyle={{color:'darkred'}} onTouchTap={() => this.signOut()} style={navLink}>Sign Out</Link>;
+      var signOutLink = <Link activeStyle={{color:'wheat'}} onTouchTap={() => this.signOut()} style={navLink}>Sign Out</Link>;
 
       var registerLink = "";
 
@@ -72,8 +73,8 @@ class NavBar extends React.PureComponent {
       {
         storeLink = "";
         signOutLink = "";
-        signInLink = <Link activeStyle={{color:'darkred'}} to="/SignIn" style={navLink}>Sign In</Link>;
-        registerLink = <Link activeStyle={{color:'darkred'}} to="/signup" style={navLink}>Register</Link>;
+        signInLink = <Link activeStyle={{color:'wheat'}} to="/SignIn" style={navLink}>Sign In</Link>;
+        registerLink = <Link activeStyle={{color:'wheat'}} to="/signup" style={navLink}>Register</Link>;
       }
       //if user is logged in it will show the sign out links
       else
@@ -86,8 +87,7 @@ class NavBar extends React.PureComponent {
     {
       return(
         <nav style={nav}>
-        <Link activeStyle={{color:'darkred'}} to="/" style={navLink}>Home</Link>
-        <Link activeStyle={{color:'darkred'}} to="/about" style={navLink}>About</Link>
+        <Link activeStyle={{color:'wheat'}} to="/" style={navLink}>Home</Link>
         {storeLink}
         {signOutLink}
         {registerLink}
@@ -111,10 +111,11 @@ class NavBar extends React.PureComponent {
       fontSize: "20px"
     }
     const navBar = {
-
+      textAlign:"center",
+      width: "300px"
     }
     const navBarMobile = {
-    width: "100%"
+    width: "300px"
     }
     const nav = {
       content: "",
@@ -126,6 +127,7 @@ class NavBar extends React.PureComponent {
       clear: "both",
       display: "table",
       margin: "0 auto",
+      textAlign:"center",
     }
     const titleStyle = {
       fontSize:"3em",
@@ -139,9 +141,9 @@ class NavBar extends React.PureComponent {
       },
     };
 
-    var storeLink = <Link activeStyle={{color:'darkred'}} to="/store" style={navLink}>Store</Link>;
+    var storeLink = <Link activeStyle={{color:'wheat'}} to="/store" style={navLink}>Store</Link>;
 
-    var signOutLink = <Link activeStyle={{color:'darkred'}} onTouchTap={() => this.signOut()} style={navLink}>Sign Out</Link>;
+    var signOutLink = <Link activeStyle={{color:'wheat'}} onTouchTap={() => this.signOut()} style={navLink}>Sign Out</Link>;
 
     var signInLink = "";
 
@@ -152,8 +154,8 @@ class NavBar extends React.PureComponent {
     {
       storeLink = "";
       signOutLink = "";
-      signInLink = <Link activeStyle={{color:'darkred'}} to="/SignIn" style={navLink}>Sign In</Link>;
-      registerLink = <Link activeStyle={{color:'darkred'}} to="/signup" style={navLink}>Register</Link>;
+      signInLink = <Link activeStyle={{color:'wheat'}} to="/SignIn" style={navLink}>Sign In</Link>;
+      registerLink = <Link activeStyle={{color:'wheat'}} to="/signup" style={navLink}>Register</Link>;
     }
     //if user is logged in it will show the sign out links
     else
@@ -166,8 +168,7 @@ class NavBar extends React.PureComponent {
       <div>
         <Responsive minDeviceWidth={1024}>
             <nav style={nav}>
-                <Link activeStyle={{color:'darkred'}} to="/" style={navLink}>Home</Link>
-                <Link activeStyle={{color:'darkred'}} to="/about" style={navLink}>About</Link>
+                <Link activeStyle={{color:'wheat'}} to="/" style={navLink}>Home</Link>
                 {storeLink}
                 {signOutLink}
                 {registerLink}

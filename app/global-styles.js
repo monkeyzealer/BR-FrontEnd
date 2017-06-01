@@ -6,11 +6,12 @@ injectGlobal`
   body {
     height: 100%;
     width: 100%;
+    margin:0;
+    padding:0;
   }
 
   body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    margin: 0;
   }
 
   body.fontLoaded {
@@ -22,6 +23,12 @@ injectGlobal`
     min-height: 100%;
     min-width: 100%;
   }
+  hr {
+    border: 0.3px solid saddlebrown;
+    margin: 10px auto;
+    width: 75%;
+    max-width: 450px;
+  }
   nav a {
   	margin-left: .5em;
   	margin-right: .5em;
@@ -29,7 +36,7 @@ injectGlobal`
   	text-decoration: none;
   }
   nav a:hover {
-    color: darkred !important;
+    color: wheat !important;
   }
   a.anchor {
     color: #6F4E37;
@@ -37,6 +44,14 @@ injectGlobal`
 }
 a.anchor:hover {
   color: darkred;
+}
+a.top {
+  font-size: 16px;
+  text-decoration: none;
+  color: wheat;
+}
+a.top:hover {
+color: #6F4E37;
 }
   p,
   label {
