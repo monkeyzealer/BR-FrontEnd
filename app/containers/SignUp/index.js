@@ -72,7 +72,7 @@ export default class SignUp extends React.PureComponent {
       address: event.target.value
     })
   }
-  handlePhoneNumber = (event) => {
+  handlePhone = (event) => {
     this.setState({
       phone: event.target.value
     })
@@ -80,13 +80,14 @@ export default class SignUp extends React.PureComponent {
   signUp = () => {
     var _this = this;
     var data = new FormData();
+    console.log(this.state.username);
     data.append("email", this.state.email);
     data.append("password", this.state.password);
     data.append("username", this.state.username);
     data.append("name", this.state.name);
     data.append("image", this.state.image);
     data.append("address", this.state.address);
-    data.append("phoneNumber", this.state.phoneNumber);
+    data.append("phone", this.state.phone);
 
 
     fetch("http://127.0.0.1:8000/api/signUp",
@@ -203,7 +204,7 @@ export default class SignUp extends React.PureComponent {
         background: "rgba(0, 0, 0, 0.3)",
         width: "100%",
         height: "30px",
-        color: "black",
+        color: "white",
         textIndent: "10px"
       },
       textareaStyle: {
@@ -286,7 +287,7 @@ export default class SignUp extends React.PureComponent {
                 underlineFocusStyle={styles.underlineFocusStyle}
               />
               <br />
-              <p style={userNameTitle}>User Name:<br />
+              <p style={userNameTitle}>User Avatar:<br />
               <RaisedButton
                 backgroundColor="rgb(58, 31, 0)"
                 label="Choose an Image"
@@ -314,7 +315,7 @@ export default class SignUp extends React.PureComponent {
               <p style={userNameTitle}>Phone Number:</p>
               <TextField
                 style={userNameBox}
-                onChange={this.handlePhoneNumber}
+                onChange={this.handlePhone}
                 hintText="&nbsp;"
                 hintStyle={styles.hintStyle}
                 inputStyle={styles.inputStyle}
@@ -350,3 +351,6 @@ export default class SignUp extends React.PureComponent {
     );
   }
 }
+SignUp.contextTypes = {
+  router: React.PropTypes.object
+};
