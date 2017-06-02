@@ -372,7 +372,7 @@ const topLinkMobile={
             </div>
             <div style={anchorBox}>
               <div style={anchor}>
-              <h1 style={Links}>Links<hr /></h1>
+              <h1 style={Links} className="Links">Links<hr /></h1>
               <h4 style={anchorHeader}><a style={anchorLink} className="anchor" href="#how">How Box Robot Works</a><a style={anchorLink} className="anchor" href="#FAQ">FAQ</a><a style={anchorLink} className="anchor" href="#partner">Partners</a></h4>
               </div>
             </div>
@@ -527,7 +527,7 @@ const topLinkMobile={
             </div>
             <div style={anchorBox}>
               <div style={anchor}>
-              <h1 style={Links}>Links<hr /></h1>
+              <h1 style={Links} className="Links">Links<hr /></h1>
               <h4 style={anchorHeader}><p><a style={anchorLink} className="anchor" href="#how">How Box Robot Works</a></p><p><a style={anchorLink} className="anchor" href="#FAQ">FAQ</a></p><p><a style={anchorLink} className="anchor" href="#partner">Partners</a></p></h4>
               </div>
             </div>

@@ -23,27 +23,20 @@ injectGlobal`
     min-height: 100%;
     min-width: 100%;
   }
-  hr {
+  .Links hr {
     border: 0.3px solid saddlebrown;
     margin: 10px auto;
     width: 75%;
     max-width: 450px;
   }
-  .Categories {
-    border: 2px solid lightgray;
-    background-color: rgb(162, 124, 75) !important;
-    height: 40px !important;
-    position: inherit !important;
-    margin-bottom: 15px;
-  }
-  .Categories button {
-    height: 40px !important;
-    padding: 0 !important;
-  }
-  .Categories hr {
-    display: none !important;
-  }
-
+  hr {
+    height: 0;
+    overflow: visible;
+    width: 95%;
+}
+.Categories hr {
+  display: none;
+}
   nav a {
   	margin-left: .5em;
   	margin-right: .5em;

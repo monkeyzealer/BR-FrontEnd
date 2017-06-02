@@ -138,7 +138,7 @@ margin: 12,
 backgroundColor: brown900,
 },
 label1: {
-color: "wheat"
+color: "wheat",
 },
 floatlabel1: {
 color: "wheat !important",
@@ -199,7 +199,7 @@ return(
     const main={
       width: "100%",
       height: "auto",
-      background: "#F7E7CE",
+      background: "url(http://h4z.it/Image/c4d379_esign_1131-2.png)",
       display: "flex",
       flexWrap: "wrap",
       flexDirection: "column",
@@ -257,20 +257,18 @@ return(
       maxWidth: "100%",
     };
     const Productbox={
-        backgroundColor: "#BdBEC0",
+        backgroundColor: "rgba(58, 31, 0,0.6)",
         width: "24%",
         margin: "0.5em",
         textDecoration: "none",
-        color: "black",
+        color: "wheat",
         border: "1px solid black"
     };
     const AdminBar = {
-      width: "100%",
       color: "wheat !important",
-      margin: "0 auto",
       textAlign: "left",
-      padding: "12px",
-      paddingLeft: "2.8%"
+      paddingLeft: "15px",
+      marginTop:"10px"
     }
     const AdminLink = {
       color: "wheat !important",
@@ -285,13 +283,15 @@ return(
         border: "1px solid black"
     };
     const search={
-      marginBottom: "0",
+      marginBottom: "5px",
       border: "1px solid black",
       paddingLeft: "15px",
       paddingRight: "15px",
       width: "250px",
       marginTop:"25px",
-      background: "rgba(0, 0, 0, 0.3)"
+      background: "rgba(58, 31, 0, 0.6)",
+      paddingBottom: "10px",
+      color: "white",
     }
     const searchTitle={
       marginBottom: "5px",
@@ -359,7 +359,9 @@ height: "40px",
 paddingLeft: "10px",
 position: "initial",
 lineHeight: "48px",
-fontWeight: "bold"
+fontWeight: "bold",
+backgroundColor:"rgb(162, 124, 75)",
+border: "1px solid lightgray"
 },
 floatlabel1: {
 color: "wheat !important",

@@ -80,7 +80,7 @@ export default class SignUp extends React.PureComponent {
   signUp = () => {
     var _this = this;
     var data = new FormData();
-    console.log(this.state.username);
+    console.log(this.state.username)
     data.append("email", this.state.email);
     data.append("password", this.state.password);
     data.append("username", this.state.username);
@@ -351,6 +351,3 @@ export default class SignUp extends React.PureComponent {
     );
   }
 }
-SignUp.contextTypes = {
-  router: React.PropTypes.object
-};

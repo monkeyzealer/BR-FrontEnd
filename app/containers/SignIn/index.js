@@ -206,3 +206,6 @@ export default class SignIn extends React.PureComponent {
     );
   }
 }
+SignIn.contextTypes = {
+  router: React.PropTypes.object
+};

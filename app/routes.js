@@ -45,6 +45,33 @@ export default function createRoutes() {
         .catch(errorLoading);
     },
   },
+  {
+   path: '/product/:id',
+   name: 'Product',
+   getComponent(nextState, cb) {
+     import('containers/Product')
+       .then(loadModule(cb))
+       .catch(errorLoading);
+  },
+  },
+  {
+  path: '/create-product',
+  name: 'Create Product',
+  getComponent(nextState, cb) {
+    import('containers/CreateProduct')
+      .then(loadModule(cb))
+      .catch(errorLoading);
+  },
+  },
+  {
+  path: '/create-category',
+  name: 'Create Category',
+  getComponent(nextState, cb) {
+    import('containers/CreateCategory')
+      .then(loadModule(cb))
+      .catch(errorLoading);
+  },
+  },
      {
       path: '*',
       name: 'notfound',
