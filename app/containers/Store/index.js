@@ -174,10 +174,10 @@ border: "1px solid black important",
 return(
   <div>
   <Responsive minDeviceWidth={1024}>
-    {createProductLink} {createCategoryLink} {deleteCategoryLink} {OrdersLink} <Link style={{color:'wheat', textDecoration:'none', padding:'10px', border:'1px solid gray', background:'rgb(58, 31, 0)', fontSize:'18px'}} to="/user-orders">My Orders</Link>
+    {createProductLink} {createCategoryLink} {deleteCategoryLink} {OrdersLink} <Link style={{color:'wheat', textDecoration:'none', padding:'10px', border:'1px solid gray', background:'rgb(58, 31, 0)', fontSize:'18px'}} to="/my-orders">My Orders</Link>
   </Responsive>
   <Responsive maxDeviceWidth={1023}>
-  <p style={AdminBarLink}>{createProductLink}</p> <p style={AdminBarLink}>{createCategoryLink}</p> <p style={AdminBarLink}> {deleteCategoryLink} </p> <p style={AdminBarLink}> {OrdersLink} </p> <p> <Link style={{color:'wheat', textDecoration:'none', padding:'10px', border:'1px solid gray', background:'rgb(58, 31, 0)', fontSize:'18px'}} to="/user-orders">My Orders</Link></p>
+  <p style={AdminBarLink}>{createProductLink}</p> <p style={AdminBarLink}>{createCategoryLink}</p> <p style={AdminBarLink}> {deleteCategoryLink} </p> <p style={AdminBarLink}> {OrdersLink} </p> <p> <Link style={{color:'wheat', textDecoration:'none', padding:'10px', border:'1px solid gray', background:'rgb(58, 31, 0)', fontSize:'18px'}} to="/my-orders">My Orders</Link></p>
 </Responsive>
   </div>
 )
@@ -275,11 +275,11 @@ return(
       textDecoration: "none"
     }
     const ProductboxMobile={
-        backgroundColor: "#BdBEC0",
+        backgroundColor: "rgba(58, 31, 0,0.6)",
         width: "100%",
         margin: "0.5em",
         textDecoration: "none",
-        color: "black",
+        color: "wheat",
         border: "1px solid black"
     };
     const search={

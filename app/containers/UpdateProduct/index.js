@@ -1,6 +1,6 @@
 /*
  *
- * CreateProducts
+ * UpdateProduct
  *
  */
 
@@ -21,7 +21,7 @@
  import NavBar from 'components/NavBar';
  import Header from 'components/Header';
 
-export default class CreateProducts extends React.PureComponent {
+export default class UpdateProduct extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state={
@@ -37,6 +37,23 @@ export default class CreateProducts extends React.PureComponent {
     }
   }
   componentWillMount(){
+    fetch("http://127.0.0.1:8000/api/showProduct/" + this.props.params.id)
+    .then(function(res){
+      return res.json()
+    })
+    .then(function(json){
+      this.setState({
+        product:json.product,
+        image:json.image,
+        description:json.description,
+        categoryID: json.categoryID,
+        stock:json.stock,
+        price:json.price,
+        preview:json.image,
+        categories:[],
+      })
+    }.bind(this))
+
     fetch("http://127.0.0.1:8000/api/getCategories?token="+this.state.token)
     .then(function(res){
       return res.json()
@@ -47,6 +64,7 @@ export default class CreateProducts extends React.PureComponent {
       })
     }.bind(this))
   }
+
 
   handleProduct = (event) => {
     this.setState({
@@ -91,7 +109,7 @@ export default class CreateProducts extends React.PureComponent {
     })
     console.log(this.state.description);
   }
-  storeProduct = () => {
+  updateProduct = () => {
     var _this = this;
     var data = new FormData();
     data.append("image", this.state.image);
@@ -101,7 +119,7 @@ export default class CreateProducts extends React.PureComponent {
     data.append("categoryID", this.state.categoryID);
     data.append("description", this.state.description);
 
-    fetch("http://127.0.0.1:8000/api/storeProduct?token="+this.state.token,
+    fetch("http://127.0.0.1:8000/api/updateProduct/"+this.props.params.id+"?token="+this.state.token,
     {
       method:"post",
       body: data,
@@ -125,6 +143,7 @@ export default class CreateProducts extends React.PureComponent {
           description:"",
           preview:"",
         })
+        _this.context.router.push("/store");
       }
     })
   }
@@ -196,17 +215,6 @@ export default class CreateProducts extends React.PureComponent {
     const formContainer={
       width:"90%",
       maxWidth:"800px",
-      margin: "0 auto",
-      position: "relative",
-      top: "50%",
-      transform: "translateY(-50%)",
-      background: "rgba(111, 78, 55, 0.8)",
-      padding: "20px",
-      color: "white"
-    };
-    const formContainerMobile={
-      width:"90%",
-      maxWidth:"300px",
       margin: "0 auto",
       position: "relative",
       top: "50%",
@@ -292,9 +300,8 @@ border: "1px solid black important",
 };
     return (
       <div style={Container}>
-        <Helmet title="CreateProduct" meta={[ { name: 'description', content: 'Description of CreateProduct' }]}/>
+        <Helmet title="UpdateProduct" meta={[ { name: 'description', content: 'Description of UpdateProduct' }]}/>
         <Header />
-        <Responsive minDeviceWidth={1024}>
         <main style={mainContainer}>
           <div style={main}>
             <div style={formContainer}>
@@ -336,6 +343,7 @@ border: "1px solid black important",
           {this.state.categories.map((category, i) => (
             <MenuItem value={category.id} primaryText={category.category} key={i}/>
           ))}
+
         </SelectField>
         </div>
         <p style={Title}>Stock:</p>
@@ -381,95 +389,6 @@ border: "1px solid black important",
       </div>
       </div>
       </main>
-      </Responsive>
-      <Responsive maxDeviceWidth={1023}>
-      <main style={mainContainer}>
-        <div style={main}>
-          <div style={formContainerMobile}>
-            <h2 style={h2title}>Create Product</h2>
-            <p style={Title}>Product Name:</p>
-            <TextField
-            onChange={this.handleProduct}
-            value={this.state.product}
-            style={contentBox}
-            hintText="&nbsp;"
-            hintStyle={styles.hintStyle}
-            inputStyle={styles.inputStyle}
-            underlineStyle={styles.underlineStyle}
-            underlineFocusStyle={styles.underlineFocusStyle}
-            />
-            <br />
-        <RaisedButton
-          backgroundColor="rgb(58, 31, 0)"
-          labelColor="wheat"
-          label="Choose an Image"
-          labelPosition="before"
-          style={styles.uploadButton}
-          style={styles.button}
-          containerElement="label"
-          >
-        <input type="file" onChange={(e) => this.handleImage(e)}  style={styles.uploadInput} />
-        </RaisedButton>
-        <img style={preview} src={this.state.preview} />
-        <br />
-      <div style={categories}>
-      <h4 style={categoryTitle}>Categories:</h4>
-      <SelectField
-        labelStyle={styles.label1}
-        value={this.state.categoryID}
-        onChange={this.handleCategory}
-        className="Categories"
-        style={styles.customWidth}
-        >
-        {this.state.categories.map((category, i) => (
-          <MenuItem value={category.id} primaryText={category.category} key={i}/>
-        ))}
-      </SelectField>
-      </div>
-      <p style={Title}>Stock:</p>
-      <TextField
-      onChange={this.handleStock}
-      value={this.state.stock}
-      style={contentBox}
-      hintText="&nbsp;"
-      hintStyle={styles.hintStyle}
-      inputStyle={styles.inputStyle}
-      underlineStyle={styles.underlineStyle}
-      underlineFocusStyle={styles.underlineFocusStyle}
-      />
-      <br />
-      <p style={Title}>Price:</p>
-      <TextField
-      onChange={this.handlePrice}
-      value={this.state.price}
-      style={contentBox}
-      hintText="&nbsp;"
-      hintStyle={styles.hintStyle}
-      inputStyle={styles.inputStyle}
-      underlineStyle={styles.underlineStyle}
-      underlineFocusStyle={styles.underlineFocusStyle}
-      />
-      <br />
-      <p style={Title}>Description:</p>
-        <TextField style={descriptionBox}
-          onChange={this.handleDescription}
-          value={this.state.description}
-          multiLine={true}
-          rows={10}
-          textareaStyle={styles.textareaStyle}
-          underlineStyle={styles.underlineStyle}
-          underlineFocusStyle={styles.underlineFocusStyle}
-        />
-        <RaisedButton style={styles.button} type="submit"
-        backgroundColor="rgb(58, 31, 0)"
-        labelColor="wheat"
-        onTouchTap={this.storeProduct}
-        label="Submit"
-        className="button-submit"  />
-    </div>
-    </div>
-    </main>
-    </Responsive>
       <Footer style={footerStyle} />
       </div>
     );

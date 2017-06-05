@@ -88,6 +88,7 @@ class NavBar extends React.PureComponent {
       return(
         <nav style={nav}>
         <Link activeStyle={{color:'wheat'}} to="/" style={navLink}>Home</Link>
+        <Link activeStyle={{color:'wheat'}} to="/roster" style={navLink}>Roster</Link>
         {storeLink}
         {signOutLink}
         {registerLink}
@@ -169,6 +170,7 @@ class NavBar extends React.PureComponent {
         <Responsive minDeviceWidth={1024}>
             <nav style={nav}>
                 <Link activeStyle={{color:'wheat'}} to="/" style={navLink}>Home</Link>
+                <Link activeStyle={{color:'wheat'}} to="/roster" style={navLink}>Roster</Link>
                 {storeLink}
                 {signOutLink}
                 {registerLink}

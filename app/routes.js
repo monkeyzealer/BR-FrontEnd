@@ -64,10 +64,64 @@ export default function createRoutes() {
   },
   },
   {
+  path: '/update-product/:id',
+  name: 'Update Product',
+  getComponent(nextState, cb) {
+    import('containers/UpdateProduct')
+      .then(loadModule(cb))
+      .catch(errorLoading);
+  },
+  },
+  {
+  path: '/update-user/:id',
+  name: 'UpdateUser',
+  getComponent(nextState, cb) {
+    import('containers/UpdateUser')
+      .then(loadModule(cb))
+      .catch(errorLoading);
+  },
+  },
+  {
   path: '/create-category',
   name: 'Create Category',
   getComponent(nextState, cb) {
     import('containers/CreateCategory')
+      .then(loadModule(cb))
+      .catch(errorLoading);
+  },
+  },
+  {
+  path: '/delete-category',
+  name: 'DeleteCategory',
+  getComponent(nextState, cb) {
+    import('containers/DeleteCategory')
+      .then(loadModule(cb))
+      .catch(errorLoading);
+  },
+  },
+  {
+  path: '/orders',
+  name: 'Orders',
+  getComponent(nextState, cb) {
+    import('containers/Orders')
+      .then(loadModule(cb))
+      .catch(errorLoading);
+  },
+  },
+  {
+  path: '/my-orders',
+  name: 'MyOrders',
+  getComponent(nextState, cb) {
+    import('containers/MyOrders')
+      .then(loadModule(cb))
+      .catch(errorLoading);
+  },
+  },
+  {
+  path: '/roster',
+  name: 'CustomerRoster',
+  getComponent(nextState, cb) {
+    import('containers/CustomerRoster')
       .then(loadModule(cb))
       .catch(errorLoading);
   },

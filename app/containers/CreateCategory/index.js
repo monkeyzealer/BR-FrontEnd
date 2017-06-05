@@ -96,17 +96,19 @@ export default class CreateCategory extends React.PureComponent {
     const contentBox={
       marginBottom: "0",
       marginTop: "2px",
-      width: "80%",
+      width: "100%",
       height: "45px",
     };
     const h2title={
       paddingTop: "0",
       marginTop: "0",
       marginBottom: "5px",
+      paddingBottom: "5px",
+      borderBottom: "2px solid #3A1F00",
     };
     const formContainer={
       width:"90%",
-      maxWidth:"800px",
+      maxWidth:"300px",
       margin: "0 auto",
       position: "relative",
       top: "50%",

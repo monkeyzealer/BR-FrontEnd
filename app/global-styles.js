@@ -37,6 +37,7 @@ injectGlobal`
 .Categories hr {
   display: none;
 }
+
   nav a {
   	margin-left: .5em;
   	margin-right: .5em;

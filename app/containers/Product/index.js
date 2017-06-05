@@ -166,13 +166,18 @@ destroyProduct = () =>{
     };
     const deleteLink ={
       textAlign: "center",
-      marginTop: "0",
-      marginBottom: "20px"
+      marginTop: "10px",
+      marginBottom: "15px"
     };
+    const delButton ={
+      backgroundColor: "rgb(58, 31, 0)",
+      color: "wheat",
+      padding: "10px"
+    }
 
-  var editLink = <Link style={{color:'red !important'}} to={`/update-product/${this.props.params.id}`}>Edit</Link>;
+  var editLink = <Link style={{color:'red'}} to={`/update-product/${this.props.params.id}`}>Edit</Link>;
 
-  var deleteProduct = <button style={{color:'red', background: 'black', border:'1px solid gray'}} onTouchTap={this.destroyProduct}>Delete Product</button>;
+  var deleteProduct = <button style={delButton} onTouchTap={this.destroyProduct}>Delete Product</button>;
 
   //if user isnt a admin it will show nothing
   if(this.state.user === null)
@@ -505,7 +510,12 @@ destroyProduct = () =>{
             {this.showMenu()}
             <div style={PurchaseBox}>
             <div style={Purchase}>
-            <RaisedButton label="Purchase" className="button-submit" style={styles.button} style={{display: 'flex', alignSelf: 'center', margin: '0 auto'}} backgroundColor="Black" labelColor="red !important" onTouchTap={this.handleOpen} />
+            <RaisedButton label="Purchase" className="button-submit"
+            style={styles.button}
+            style={{display: 'flex', alignSelf: 'center', margin: '0 auto'}}
+            backgroundColor="rgb(58, 31, 0)"
+            labelColor="wheat"
+            onTouchTap={this.handleOpen} />
             <Dialog
               title={this.state.product.product}
               actions={actions}
