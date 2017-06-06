@@ -38,7 +38,7 @@ export default class UpdateUser extends React.PureComponent {
    }
   }
   componentWillMount(){
-    fetch("http://127.0.0.1:8000/api/showUser/" + this.props.params.id,{
+    fetch("http://boxrobot.codemonkeytestsites.com/api/showUser/" + this.props.params.id,{
       headers: {
         "Authorization":"Bearer " + this.state.token
       }
@@ -119,7 +119,7 @@ export default class UpdateUser extends React.PureComponent {
     data.append("phone", this.state.phone);
     data.append("bio", this.state.bio);
 
-    fetch("http://127.0.0.1:8000/api/UpdateUsers/"+this.props.params.id+"?token="+this.state.token,
+    fetch("http://boxrobot.codemonkeytestsites.com/api/UpdateUsers/"+this.props.params.id+"?token="+this.state.token,
     {
       method:"post",
       body: data,
@@ -418,3 +418,6 @@ const bioBox={
     );
   }
 }
+UpdateUser.contextTypes = {
+  router: React.PropTypes.object
+};

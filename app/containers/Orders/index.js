@@ -37,7 +37,9 @@ export default class Orders extends React.PureComponent {
     }
   }
   componentWillMount(){
-    fetch("http://127.0.0.1:8000/api/getOrders?token=" + this.state.token)
+    fetch("http://boxrobot.codemonkeytestsites.com/api/getOrders?token=" + this.state.token,{
+      headers:{"Authorization":"Bearer "+this.state.token}
+    })
     .then(function(res){
       return res.json()
     })
@@ -47,7 +49,7 @@ export default class Orders extends React.PureComponent {
       })
     }.bind(this))
 
-    fetch("http://127.0.0.1:8000/api/getProducts")
+    fetch("http://boxrobot.codemonkeytestsites.com/api/getProducts")
     .then(function(res){
       return res.json()
     })
@@ -57,7 +59,7 @@ export default class Orders extends React.PureComponent {
       })
     }.bind(this))
 
-    fetch("http://127.0.0.1:8000/api/showOrder/" + this.props.params.id)
+    fetch("http://boxrobot.codemonkeytestsites.com/api/showOrder/" + this.props.params.id)
     .then(function(res){
       return res.json()
     })
@@ -87,7 +89,7 @@ export default class Orders extends React.PureComponent {
     data.append("amount", this.state.amount)
     data.append("comment", this.state.comment)
 
-    fetch("http://127.0.0.1:8000/api/updateOrder/"+this.state.activeOrder.id+"?token="+this.state.token,
+    fetch("http://boxrobot.codemonkeytestsites.com/api/updateOrder/"+this.state.activeOrder.id+"?token="+this.state.token,
   {
     method:"post",
     body:data,
@@ -110,11 +112,11 @@ export default class Orders extends React.PureComponent {
     }
   })
   }
-  destroyOrder = () =>{
+  destroyOrder = (id) =>{
     var _this = this;
-    fetch("http://127.0.0.1:8000/api/destroyOrder/" + this.state.activeOrder.id + "?token=" + this.state.token, {
+    fetch("http://boxrobot.codemonkeytestsites.com/api/destroyOrder/" + id + "?token=" + this.state.token, {
       method: "post",
-      headers:{"Authorization":"bearer "+this.state.token}
+      headers:{"Authorization":"Bearer "+this.state.token}
     })
     .then(function(res){
       return res.json();
@@ -172,14 +174,6 @@ export default class Orders extends React.PureComponent {
     const footerStyle ={
       alignSelf: "flex-end",
     };
-    const productImage={
-      width: "100%",
-      height: "250px",
-      background: "rgba(255, 255, 255, 0.3)",
-      position: "relative",
-      padding: "0",
-      borderRadius: "0",
-    }
     const customContentStyle = {
       width: '30%',
       maxWidth: 'none',
@@ -426,7 +420,7 @@ const flexGridMobile ={
               backgroundColor="rgb(58, 31, 0)"
               labelColor="wheat"
               style={{display: 'flex', alignSelf: 'center', margin: '0 auto', marginBottom: '5px'}}
-              onTouchTap={this.destroyProduct}/></p>
+              onTouchTap={()=>this.destroyOrder(order.id)}/></p>
               </div>
             </div>
           </div>
@@ -483,7 +477,7 @@ const flexGridMobile ={
           backgroundColor="rgb(58, 31, 0)"
           labelColor="wheat"
           style={{display: 'flex', alignSelf: 'center', margin: '0 auto', marginBottom: '5px'}}
-          onTouchTap={this.destroyProduct}/></p></div>
+          onTouchTap={()=>this.destroyOrder(order.id)}/></p></div>
         </div>
         </div>
         ))}

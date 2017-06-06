@@ -37,7 +37,7 @@ export default class UpdateProduct extends React.PureComponent {
     }
   }
   componentWillMount(){
-    fetch("http://127.0.0.1:8000/api/showProduct/" + this.props.params.id)
+    fetch("http://boxrobot.codemonkeytestsites.com/api/showProduct/" + this.props.params.id)
     .then(function(res){
       return res.json()
     })
@@ -54,7 +54,7 @@ export default class UpdateProduct extends React.PureComponent {
       })
     }.bind(this))
 
-    fetch("http://127.0.0.1:8000/api/getCategories?token="+this.state.token)
+    fetch("http://boxrobot.codemonkeytestsites.com/api/getCategories?token="+this.state.token)
     .then(function(res){
       return res.json()
     })
@@ -119,7 +119,7 @@ export default class UpdateProduct extends React.PureComponent {
     data.append("categoryID", this.state.categoryID);
     data.append("description", this.state.description);
 
-    fetch("http://127.0.0.1:8000/api/updateProduct/"+this.props.params.id+"?token="+this.state.token,
+    fetch("http://boxrobot.codemonkeytestsites.com/api/updateProduct/"+this.props.params.id+"?token="+this.state.token,
     {
       method:"post",
       body: data,
@@ -305,7 +305,7 @@ border: "1px solid black important",
         <main style={mainContainer}>
           <div style={main}>
             <div style={formContainer}>
-              <h2 style={h2title}>Create Product</h2>
+              <h2 style={h2title}>Update Product</h2>
               <p style={Title}>Product Name:</p>
               <TextField
               onChange={this.handleProduct}
@@ -383,7 +383,7 @@ border: "1px solid black important",
           <RaisedButton style={styles.button} type="submit"
           backgroundColor="rgb(58, 31, 0)"
           labelColor="wheat"
-          onTouchTap={this.storeProduct}
+          onTouchTap={this.updateProduct}
           label="Submit"
           className="button-submit"  />
       </div>
@@ -394,3 +394,6 @@ border: "1px solid black important",
     );
   }
 }
+UpdateProduct.contextTypes = {
+  router: React.PropTypes.object
+};

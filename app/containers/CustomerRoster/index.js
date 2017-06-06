@@ -33,7 +33,9 @@ export default class CustomerRoster extends React.PureComponent {
     }
   }
   componentWillMount(){
-    fetch("http://127.0.0.1:8000/api/allUsers?token=" + this.state.token)
+    fetch("http://boxrobot.codemonkeytestsites.com/api/allUsers?token=" + this.state.token,{
+      headers:{"Authorization":"Bearer "+this.state.token}
+    })
     .then(function(res){
       return res.json()
     })

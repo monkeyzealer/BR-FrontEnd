@@ -90,7 +90,7 @@ export default class SignUp extends React.PureComponent {
     data.append("phone", this.state.phone);
 
 
-    fetch("http://127.0.0.1:8000/api/signUp",
+    fetch("http://boxrobot.codemonkeytestsites.com/api/signUp",
     {
       method:"post",
       body: data

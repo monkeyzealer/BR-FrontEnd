@@ -35,7 +35,7 @@ export default class Customer extends React.PureComponent {
    }
   }
   componentWillMount(){
-    fetch("http://127.0.0.1:8000/api/showUser/" + this.props.params.id, {
+    fetch("http://boxrobot.codemonkeytestsites.com/api/showUser/" + this.props.params.id, {
       headers:{"Authorization":"Bearer " + this.state.token}
     })
     .then(function(res){
@@ -50,7 +50,7 @@ export default class Customer extends React.PureComponent {
   }
   destroyUser = () =>{
     var _this = this;
-    fetch("http://127.0.0.1:8000/api/destroyUser/" + this.props.params.id + "?token=" + this.state.token, {
+    fetch("http://boxrobot.codemonkeytestsites.com/api/destroyUser/" + this.props.params.id + "?token=" + this.state.token, {
       method: "post",
       headers:{"Authorization":"bearer "+this.state.token}
     })
@@ -199,7 +199,7 @@ export default class Customer extends React.PureComponent {
       paddingTop: "20px",
       paddingBottom: "20px",
     };
-    const productContent={
+    const userContent={
       marginTop: "0",
       paddingLeft: "10px",
       paddingRight: "10px",
@@ -210,7 +210,7 @@ export default class Customer extends React.PureComponent {
     const footerStyle ={
       alignSelf: "flex-end",
     };
-    const productHeader ={
+    const userHeader ={
       width: "100%",
       marginTop: "0px",
       marginBottom: "0.5em",
@@ -271,12 +271,12 @@ export default class Customer extends React.PureComponent {
             <div style={imagePostContainer}>
               <img style={imagePost} src={this.state.user.image} />
             </div>
-            <h1 style={productHeader}>{this.state.user.username}</h1>
-            <p style={productContent}><b>Name:</b> {this.state.user.name}</p>
-            <p style={productContent}><b>Email:</b> {this.state.user.email}</p>
-            <p style={productContent}><b>Phone:</b> {this.state.user.phone}</p>
-            <p style={productContent}><b>Address:</b> {this.state.user.address}</p>
-            <p style={productContent}><b>Bio:</b><br />{this.state.user.bio}</p>
+            <h1 style={userHeader}>{this.state.user.username}</h1>
+            <p style={userContent}><b>Name:</b> {this.state.user.name}</p>
+            <p style={userContent}><b>Email:</b> {this.state.user.email}</p>
+            <p style={userContent}><b>Phone:</b> {this.state.user.phone}</p>
+            <p style={userContent}><b>Address:</b> {this.state.user.address}</p>
+            <p style={userContent}><b>Bio:</b><br />{this.state.user.bio}</p>
             <p style={update}><Link style={edit} to={`/update-user/${this.state.user.id}`}>Edit</Link></p>
             {this.showMenu()}
             </div>
@@ -289,13 +289,13 @@ export default class Customer extends React.PureComponent {
           <div style={imagePostContainer}>
             <img style={imagePost} src={this.state.user.image} />
           </div>
-          <h1 style={productHeader}>{this.state.user.username}</h1>
+          <h1 style={userHeader}>{this.state.user.username}</h1>
           <div style={Content}>
-          <p style={productContent}><b>Name:</b> {this.state.user.name}</p>
-          <p style={productContent}><b>Email:</b> {this.state.user.email}</p>
-          <p style={productContent}><b>Phone:</b> {this.state.user.phone}</p>
-          <p style={productContent}><b>Address:</b> {this.state.user.address}</p>
-          <p style={productContent}><b>Bio:</b><br />{this.state.user.bio}</p>
+          <p style={userContent}><b>Name:</b> {this.state.user.name}</p>
+          <p style={userContent}><b>Email:</b> {this.state.user.email}</p>
+          <p style={userContent}><b>Phone:</b> {this.state.user.phone}</p>
+          <p style={userContent}><b>Address:</b> {this.state.user.address}</p>
+          <p style={userContent}><b>Bio:</b><br />{this.state.user.bio}</p>
           <p style={update}><Link style={edit} to={`/update-user/${this.state.user.id}`}>Edit</Link></p>
           </div>
         </div>

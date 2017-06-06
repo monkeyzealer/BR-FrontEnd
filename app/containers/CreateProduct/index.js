@@ -37,7 +37,7 @@ export default class CreateProducts extends React.PureComponent {
     }
   }
   componentWillMount(){
-    fetch("http://127.0.0.1:8000/api/getCategories?token="+this.state.token)
+    fetch("http://boxrobot.codemonkeytestsites.com/api/getCategories?token="+this.state.token)
     .then(function(res){
       return res.json()
     })
@@ -101,7 +101,7 @@ export default class CreateProducts extends React.PureComponent {
     data.append("categoryID", this.state.categoryID);
     data.append("description", this.state.description);
 
-    fetch("http://127.0.0.1:8000/api/storeProduct?token="+this.state.token,
+    fetch("http://boxrobot.codemonkeytestsites.com/api/storeProduct?token="+this.state.token,
     {
       method:"post",
       body: data,

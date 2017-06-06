@@ -33,7 +33,7 @@ export default class Store extends React.PureComponent {
     }
   }
   componentWillMount(){
-    fetch("http://127.0.0.1:8000/api/getProducts")
+    fetch("http://boxrobot.codemonkeytestsites.com/api/getProducts")
     .then(function(res){
       return res.json()
     })
@@ -43,7 +43,7 @@ export default class Store extends React.PureComponent {
         filterProducts:json
       })
     }.bind(this))
-    fetch("http://127.0.0.1:8000/api/getCategories?token="+this.state.token)
+    fetch("http://boxrobot.codemonkeytestsites.com/api/getCategories?token="+this.state.token)
     .then(function(res){
       return res.json()
     })
