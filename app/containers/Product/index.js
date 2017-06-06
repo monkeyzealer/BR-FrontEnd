@@ -302,8 +302,6 @@ destroyProduct = () =>{
     const productHeader ={
       width: "100%",
       marginTop: "0px",
-      paddingLeft: "10px",
-      paddingRight: "10px",
       marginBottom: "0.5em",
       textAlign: "center",
     }
@@ -328,8 +326,8 @@ destroyProduct = () =>{
       display: "flex",
       flexWrap: "wrap",
       flexDirection: "row",
-      background: "#6D6E72",
-      color: "white"
+      background: "burlywood",
+      color: "white",
     };
     const userComment={
       display: "flex",
@@ -337,7 +335,6 @@ destroyProduct = () =>{
       flexDirection: "column",
       borderTop: "1px solid black",
       padding: "15px",
-      background: "rgba(0, 0, 0, 0.4)",
     };
     const userName={
       textDecoration: "bold",
@@ -364,13 +361,12 @@ destroyProduct = () =>{
     };
     const commentBox={
       width: "100%",
-      borderTop: "1px solid white",
+      borderTop: "1px solid black",
       paddingTop: "20px",
-      color: "white",
+      color: "darkred",
     }
     const commentInputTitle={
-      paddingLeft: "1em",
-      paddingRight: "1em",
+      textIndent: "0.8em",
       marginBottom: "0",
       paddingTop: "0",
       width: "98%",
@@ -436,18 +432,17 @@ destroyProduct = () =>{
         width: "100%",
         height: "30px",
         color: "white",
-        paddingLeft: "10px",
-        paddingRight: "10px",
+        textIndent: "10px"
       },
       textareaStyle: {
         background: "rgba(0, 0, 0, 0.3)",
         marginTop: "0",
-        paddingLeft: "10px",
-        paddingRight: "10px",
-        height: "258px",
+        color: "white",
+        height: "238px",
         paddingTop: "5px",
         paddingBottom: "5px",
-        marginBottom: "0"
+        marginBottom: "0",
+        textIndent: "10px"
       },
       uploadButton: {
         verticalAlign: 'middle',
@@ -553,7 +548,7 @@ destroyProduct = () =>{
               </div>
             ))}
             <div style={commentBox}>
-                <p style={commentInputTitle}>Comment here:</p>
+                <h3 style={commentInputTitle}>Comment here:</h3>
                 <TextField style={commentInputBox}
                   multiLine={true}
                   rows={10}
@@ -563,9 +558,12 @@ destroyProduct = () =>{
                   onChange={this.handleComment}
                   />
                  <br />
-                 <RaisedButton style={styles.button2} type="submit"
+                 <RaisedButton style={styles.button2}
+                 type="submit"
+                 backgroundColor="rgb(58, 31, 0)"
+                 labelColor="wheat"
                  label="Submit" onTouchTap={this.storeComment}
-                 className="button-submit" primary={true} />
+                 className="button-submit"  />
             </div>
           </div>
         </main>

@@ -351,3 +351,6 @@ export default class SignUp extends React.PureComponent {
     );
   }
 }
+SignUp.contextTypes = {
+  router: React.PropTypes.object
+};

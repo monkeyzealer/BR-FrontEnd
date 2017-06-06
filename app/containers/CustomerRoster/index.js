@@ -43,6 +43,7 @@ export default class CustomerRoster extends React.PureComponent {
       })
     }.bind(this))
 }
+
   render() {
     const Container={
       display: "flex",
@@ -161,7 +162,7 @@ export default class CustomerRoster extends React.PureComponent {
           <div style={main}>
           <div style={flexGrid}>
           {this.state.users.map((users,i) => (
-            <div style={userBox}>
+            <Link to={`/customer/${users.id}`} style={userBox}>
               <div style={userContent}>
                 <div style={avatar}>
                   <img
@@ -179,7 +180,7 @@ export default class CustomerRoster extends React.PureComponent {
                 <p style={update}><Link style={edit} to={`/update-user/${users.id}`}>Edit</Link></p>
                 </div>
               </div>
-            </div>
+            </Link>
             ))}
           </div>
           </div>
@@ -205,7 +206,7 @@ export default class CustomerRoster extends React.PureComponent {
                 <div><b>Email:</b> {users.username} </div>
                 <div><b>Phone:</b> {users.phone}</div>
                 <div><b>Address:</b> {users.address}</div>
-                <p style={update}><Link style={edit} to={`/update-product/${this.props.params.id}`}>Edit</Link></p>
+                <p style={update}><Link style={edit} to={`/update-user/${users.id}`}>Edit</Link></p>
                 </div>
               </div>
             </div>

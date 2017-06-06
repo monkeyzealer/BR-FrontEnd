@@ -63,6 +63,8 @@ class NavBar extends React.PureComponent {
 
       var signOutLink = <Link activeStyle={{color:'wheat'}} onTouchTap={() => this.signOut()} style={navLink}>Sign Out</Link>;
 
+      var rosterLink = <Link activeStyle={{color:'wheat'}} to="/roster" style={navLink}>Roster</Link>
+
       var registerLink = "";
 
       var signInLink = "";
@@ -73,6 +75,7 @@ class NavBar extends React.PureComponent {
       {
         storeLink = "";
         signOutLink = "";
+        rosterLink = "";
         signInLink = <Link activeStyle={{color:'wheat'}} to="/SignIn" style={navLink}>Sign In</Link>;
         registerLink = <Link activeStyle={{color:'wheat'}} to="/signup" style={navLink}>Register</Link>;
       }
@@ -88,8 +91,8 @@ class NavBar extends React.PureComponent {
       return(
         <nav style={nav}>
         <Link activeStyle={{color:'wheat'}} to="/" style={navLink}>Home</Link>
-        <Link activeStyle={{color:'wheat'}} to="/roster" style={navLink}>Roster</Link>
         {storeLink}
+        {rosterLink}
         {signOutLink}
         {registerLink}
         {signInLink}
@@ -101,7 +104,7 @@ class NavBar extends React.PureComponent {
   sessionStorage.removeItem("user");
   sessionStorage.removeItem("token");
   alert("Good bye and Come Again");
-  this.context.router.push("/");
+  window.location.reload()
   }
   render() {
     const navLink={
@@ -146,6 +149,8 @@ class NavBar extends React.PureComponent {
 
     var signOutLink = <Link activeStyle={{color:'wheat'}} onTouchTap={() => this.signOut()} style={navLink}>Sign Out</Link>;
 
+    var rosterLink = <Link activeStyle={{color:'wheat'}} to="/roster" style={navLink}>Roster</Link>
+
     var signInLink = "";
 
     var registerLink = "";
@@ -155,6 +160,7 @@ class NavBar extends React.PureComponent {
     {
       storeLink = "";
       signOutLink = "";
+      rosterLink = "",
       signInLink = <Link activeStyle={{color:'wheat'}} to="/SignIn" style={navLink}>Sign In</Link>;
       registerLink = <Link activeStyle={{color:'wheat'}} to="/signup" style={navLink}>Register</Link>;
     }
@@ -170,7 +176,7 @@ class NavBar extends React.PureComponent {
         <Responsive minDeviceWidth={1024}>
             <nav style={nav}>
                 <Link activeStyle={{color:'wheat'}} to="/" style={navLink}>Home</Link>
-                <Link activeStyle={{color:'wheat'}} to="/roster" style={navLink}>Roster</Link>
+                {rosterLink}
                 {storeLink}
                 {signOutLink}
                 {registerLink}

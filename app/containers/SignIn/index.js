@@ -91,7 +91,8 @@ export default class SignIn extends React.PureComponent {
       display: "flex",
       flexWrap: "wrap",
       flexDirection: "column",
-      paddingTop: "20px"
+      paddingTop: "20px",
+      paddingBottom: "20px",
     };
     const emailBox={
       width: "100%",
@@ -145,7 +146,7 @@ export default class SignIn extends React.PureComponent {
       background: "rgba(0, 0, 0, 0.3)",
       width: "100%",
       height: "30px",
-      color: "black",
+      color: "white",
       textIndent: "10px"
     },
     button2: {

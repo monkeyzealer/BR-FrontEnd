@@ -126,6 +126,15 @@ export default function createRoutes() {
       .catch(errorLoading);
   },
   },
+  {
+   path: '/customer/:id',
+   name: 'Customer',
+   getComponent(nextState, cb) {
+     import('containers/Customer')
+       .then(loadModule(cb))
+       .catch(errorLoading);
+  },
+  },
      {
       path: '*',
       name: 'notfound',
