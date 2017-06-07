@@ -29,6 +29,7 @@ export default class UpdateProduct extends React.PureComponent {
       image:"",
       description:"",
       categoryID: "",
+      months: "",
       stock:"",
       price:"",
       preview:"",
@@ -47,6 +48,7 @@ export default class UpdateProduct extends React.PureComponent {
         image:json.image,
         description:json.description,
         categoryID: json.categoryID,
+        months: json.months,
         stock:json.stock,
         price:json.price,
         preview:json.image,
@@ -88,6 +90,13 @@ export default class UpdateProduct extends React.PureComponent {
     }
     reader.readAsDataURL(file);
   }
+  handleMonths = (event) => {
+    this.setState({
+      months:event.target.value
+
+    })
+    console.log(this.state.months);
+  }
   handleStock = (event) => {
     this.setState({
       stock:event.target.value
@@ -115,6 +124,7 @@ export default class UpdateProduct extends React.PureComponent {
     data.append("image", this.state.image);
     data.append("product", this.state.product);
     data.append("stock", this.state.stock);
+    data.append("months", this.state.months);
     data.append("price", this.state.price);
     data.append("categoryID", this.state.categoryID);
     data.append("description", this.state.description);
@@ -140,6 +150,7 @@ export default class UpdateProduct extends React.PureComponent {
           categoryID:"",
           stock:"",
           price:"",
+          months:"",
           description:"",
           preview:"",
         })
@@ -170,6 +181,7 @@ export default class UpdateProduct extends React.PureComponent {
       flexDirection: "column",
       paddingTop: "20px",
       paddingBottom: "20px",
+      justifyContent: "center"
     };
     const footerStyle ={
       alignSelf: "flex-end",
@@ -216,9 +228,6 @@ export default class UpdateProduct extends React.PureComponent {
       width:"90%",
       maxWidth:"800px",
       margin: "0 auto",
-      position: "relative",
-      top: "50%",
-      transform: "translateY(-50%)",
       background: "rgba(111, 78, 55, 0.8)",
       padding: "20px",
       color: "white"
@@ -346,6 +355,18 @@ border: "1px solid black important",
 
         </SelectField>
         </div>
+        <p style={Title}>Months:</p>
+        <TextField
+        onChange={this.handleMonths}
+        value={this.state.months}
+        style={contentBox}
+        hintText="&nbsp;"
+        hintStyle={styles.hintStyle}
+        inputStyle={styles.inputStyle}
+        underlineStyle={styles.underlineStyle}
+        underlineFocusStyle={styles.underlineFocusStyle}
+        />
+        <br />
         <p style={Title}>Stock:</p>
         <TextField
         onChange={this.handleStock}

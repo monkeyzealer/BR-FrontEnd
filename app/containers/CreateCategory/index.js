@@ -82,6 +82,7 @@ export default class CreateCategory extends React.PureComponent {
       flexDirection: "column",
       paddingTop: "20px",
       paddingBottom: "20px",
+      justifyContent: "center"
     };
     const footerStyle ={
       alignSelf: "flex-end",
@@ -110,9 +111,6 @@ export default class CreateCategory extends React.PureComponent {
       width:"90%",
       maxWidth:"300px",
       margin: "0 auto",
-      position: "relative",
-      top: "50%",
-      transform: "translateY(-50%)",
       background: "rgba(111, 78, 55, 0.8)",
       padding: "20px",
       color: "white"

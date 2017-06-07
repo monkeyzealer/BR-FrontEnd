@@ -116,7 +116,7 @@ export default class CustomerRoster extends React.PureComponent {
       overflow: "hidden",
     };
     const userImage={
-      width: "100%",
+      width: "250px",
       height: "250px",
       background: "rgba(255, 255, 255, 0.3)",
       position: "relative",
@@ -126,7 +126,8 @@ export default class CustomerRoster extends React.PureComponent {
     }
     const avatar={
       width: "70%",
-      margin: "0 auto"
+      margin: "0 auto",
+      textAlign: "center",
     }
     const flexGridMobile ={
       padding: "0",

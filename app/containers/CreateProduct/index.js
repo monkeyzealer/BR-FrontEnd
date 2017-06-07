@@ -29,6 +29,7 @@ export default class CreateProducts extends React.PureComponent {
       image:"",
       description:"",
       categoryID: "",
+      months: "",
       stock:"",
       price:"",
       preview:"",
@@ -70,6 +71,13 @@ export default class CreateProducts extends React.PureComponent {
     }
     reader.readAsDataURL(file);
   }
+  handleMonths = (event) => {
+    this.setState({
+      months:event.target.value
+
+    })
+    console.log(this.state.months);
+  }
   handleStock = (event) => {
     this.setState({
       stock:event.target.value
@@ -98,6 +106,7 @@ export default class CreateProducts extends React.PureComponent {
     data.append("product", this.state.product);
     data.append("stock", this.state.stock);
     data.append("price", this.state.price);
+    data.append("months", this.state.months);
     data.append("categoryID", this.state.categoryID);
     data.append("description", this.state.description);
 
@@ -105,7 +114,7 @@ export default class CreateProducts extends React.PureComponent {
     {
       method:"post",
       body: data,
-      headers: {"Authorization":"bearer "+this.state.token}
+      headers: {"Authorization":"Bearer "+this.state.token}
     })
     .then(function(res){
       return res.json()
@@ -120,6 +129,7 @@ export default class CreateProducts extends React.PureComponent {
           product:"",
           image:"",
           categoryID:"",
+          months:"",
           stock:"",
           price:"",
           description:"",
@@ -151,6 +161,7 @@ export default class CreateProducts extends React.PureComponent {
       flexDirection: "column",
       paddingTop: "20px",
       paddingBottom: "20px",
+      justifyContent: "center"
     };
     const footerStyle ={
       alignSelf: "flex-end",
@@ -197,9 +208,6 @@ export default class CreateProducts extends React.PureComponent {
       width:"90%",
       maxWidth:"800px",
       margin: "0 auto",
-      position: "relative",
-      top: "50%",
-      transform: "translateY(-50%)",
       background: "rgba(111, 78, 55, 0.8)",
       padding: "20px",
       color: "white"
@@ -208,9 +216,6 @@ export default class CreateProducts extends React.PureComponent {
       width:"90%",
       maxWidth:"300px",
       margin: "0 auto",
-      position: "relative",
-      top: "50%",
-      transform: "translateY(-50%)",
       background: "rgba(111, 78, 55, 0.8)",
       padding: "20px",
       color: "white"
@@ -338,6 +343,18 @@ border: "1px solid black important",
           ))}
         </SelectField>
         </div>
+        <p style={Title}>Months:</p>
+        <TextField
+        onChange={this.handleMonths}
+        value={this.state.months}
+        style={contentBox}
+        hintText="&nbsp;"
+        hintStyle={styles.hintStyle}
+        inputStyle={styles.inputStyle}
+        underlineStyle={styles.underlineStyle}
+        underlineFocusStyle={styles.underlineFocusStyle}
+        />
+        <br />
         <p style={Title}>Stock:</p>
         <TextField
         onChange={this.handleStock}
@@ -426,6 +443,18 @@ border: "1px solid black important",
         ))}
       </SelectField>
       </div>
+      <p style={Title}>Months:</p>
+      <TextField
+      onChange={this.handleMonths}
+      value={this.state.months}
+      style={contentBox}
+      hintText="&nbsp;"
+      hintStyle={styles.hintStyle}
+      inputStyle={styles.inputStyle}
+      underlineStyle={styles.underlineStyle}
+      underlineFocusStyle={styles.underlineFocusStyle}
+      />
+      <br />
       <p style={Title}>Stock:</p>
       <TextField
       onChange={this.handleStock}
