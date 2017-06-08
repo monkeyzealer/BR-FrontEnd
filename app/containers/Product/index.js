@@ -269,8 +269,8 @@ destroyProduct = () =>{
       minHeight: "100vh",
     };
     const customContentStyle = {
-      width: '30%',
-      maxWidth: 'none',
+      width: '90%',
+      maxWidth: '500px',
     };
     const mainContainer={
       display: "flex",
@@ -398,7 +398,7 @@ destroyProduct = () =>{
     const formContainer={
       padding: "15px",
       fontWeight: "bold",
-      color: "black"
+      color: "black",
     };
     const Title={
       marginBottom: "0",
@@ -527,8 +527,11 @@ destroyProduct = () =>{
               actionsContainerStyle={{textAlign:'center'}}
             >
             <div style={formContainer}>
-            <p style={Title}>Amount:</p>
-            <input type="number" name="quantity" min="1" max={this.state.product.stock} value={this.state.amount} onChange={this.handleAmount} style={amountNumber} ></input>
+            <p style={Title}>Months:</p>
+            <input type="number" name="quantity"
+            step={this.state.product.months} min={this.state.product.months} max={this.state.product.stock}
+            value={this.state.amount} onChange={this.handleAmount}
+            style={amountNumber} ></input>
             <p style={Title}>Comment:</p>
               <TextField style={orderCommentBox}
                 onChange={this.handleOrderComment}
@@ -584,9 +587,44 @@ destroyProduct = () =>{
             <h1 style={productHeader}>{this.state.product.product}</h1>
             <div style={Content}>
             <p style={productContent}><b>Price:</b> ${this.state.product.price}</p>
-            <p style={productContent}><b>Stock:</b> {this.state.product.stock}</p>
             <p style={productContent}><b>Description:</b><br />{this.state.product.description}</p>
             {this.showMenu()}
+            <div style={PurchaseBox}>
+            <div style={Purchase}>
+            <RaisedButton label="Purchase" className="button-submit"
+            style={styles.button}
+            style={{display: 'flex', alignSelf: 'center', margin: '0 auto'}}
+            backgroundColor="rgb(58, 31, 0)"
+            labelColor="wheat"
+            onTouchTap={this.handleOpen} />
+            <Dialog
+              title={this.state.product.product}
+              actions={actions}
+              modal={true}
+              contentStyle={customContentStyle}
+              open={this.state.open}
+              actionsContainerStyle={{textAlign:'center'}}
+            >
+            <div style={formContainer}>
+            <p style={Title}>Months:</p>
+            <input type="number" name="quantity"
+            step={this.state.product.months} min={this.state.product.months} max={this.state.product.stock}
+            value={this.state.amount} onChange={this.handleAmount}
+            style={amountNumber} ></input>
+            <p style={Title}>Comment:</p>
+              <TextField style={orderCommentBox}
+                onChange={this.handleOrderComment}
+                value={this.state.comment}
+                multiLine={true}
+                rows={10}
+                textareaStyle={styles.textareaStyle}
+                underlineStyle={styles.underlineStyle}
+                underlineFocusStyle={styles.underlineFocusStyle}
+              />
+            </div>
+            </Dialog>
+            </div>
+            </div>
             </div>
           </div>
           <div style={commentContainer}>
@@ -599,7 +637,7 @@ destroyProduct = () =>{
               </div>
             ))}
             <div style={commentBox}>
-                <p style={commentInputTitle}>Comment here:</p>
+                <h3 style={commentInputTitle}>Comment here:</h3>
                 <TextField style={commentInputBox}
                   multiLine={true}
                   rows={10}
@@ -609,9 +647,12 @@ destroyProduct = () =>{
                   onChange={this.handleComment}
                   />
                  <br />
-                 <RaisedButton style={styles.button2} type="submit"
+                 <RaisedButton style={styles.button2}
+                 type="submit"
+                 backgroundColor="rgb(58, 31, 0)"
+                 labelColor="wheat"
                  label="Submit" onTouchTap={this.storeComment}
-                 className="button-submit" primary={true} />
+                 className="button-submit"  />
             </div>
           </div>
         </main>

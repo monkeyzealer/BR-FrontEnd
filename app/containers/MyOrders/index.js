@@ -171,8 +171,8 @@ export default class MyOrders extends React.PureComponent {
       borderRadius: "0",
     }
     const customContentStyle = {
-      width: '30%',
-      maxWidth: 'none',
+      width: '90%',
+      maxWidth: '500px',
     };
     const orderContent={
       width: "100%",
@@ -377,12 +377,12 @@ const flexGridMobile ={
               <h2 style={productTitle}> {order.product}</h2>
               <div style={orderInfo}>
               <div> Bought by <b>{order.name}</b> </div>
-              <div><b>Amount:</b> {order.amount} </div>
+              <div><b>Months:</b> {order.amount} </div>
               <div><b>TotalPrice:</b> ${order.totalPrice}</div>
               <div><b>Comment:</b> {order.comment}</div>
               <div style={EditBox}>
               <div style={Edit}>
-              <p style={update}><RaisedButton label="Edit Order"
+              <p style={update}><RaisedButton label="Edit Sub"
               backgroundColor="rgb(58, 31, 0)"
               labelColor="wheat"
               onTouchTap={() => this.handleOpen(order)} /></p>
@@ -395,8 +395,11 @@ const flexGridMobile ={
                 actionsContainerStyle={{textAlign:'center'}}
               >
               <div style={formContainer}>
-              <p style={Title}>Amount:</p>
-              <input type="number" name="quantity" min="1" max={this.state.activeOrder.stock} value={this.state.amount} onChange={this.handleAmount} style={amountNumber} ></input>
+              <p style={Title}>Months:</p>
+              <input type="number" name="quantity"
+              step={this.state.activeOrder.months} min={this.state.activeOrder.months} max={this.state.activeOrder.stock}
+              value={this.state.amount} onChange={this.handleAmount}
+              style={amountNumber} ></input>
               <p style={Title}>Comment:</p>
                 <TextField style={orderCommentBox}
                   onChange={this.handleOrderComment}
@@ -411,7 +414,7 @@ const flexGridMobile ={
               </Dialog>
               </div>
               </div>
-              <p style={del}><RaisedButton label="Delete Order"
+              <p style={del}><RaisedButton label="Delete Sub"
               backgroundColor="rgb(58, 31, 0)"
               labelColor="wheat"
               style={{display: 'flex', alignSelf: 'center', margin: '0 auto', marginBottom: '5px'}}
@@ -434,12 +437,12 @@ const flexGridMobile ={
           <h3 style={productTitle}> {order.product}</h3>
           <div style={orderInfo}>
           <div> Bought by <b>{order.name}</b> </div>
-          <div><b>Amount:</b> {order.amount} </div>
+          <div><b>Months:</b> {order.amount} </div>
           <div><b>TotalPrice:</b> ${order.totalPrice}</div>
           <div><b>Comment:</b> {order.comment}</div>
           <div style={EditBox}>
           <div style={Edit}>
-          <p style={update}><RaisedButton label="Edit Order"
+          <p style={update}><RaisedButton label="Edit Sub"
           backgroundColor="rgb(58, 31, 0)"
           labelColor="wheat"
           onTouchTap={() => this.handleOpen(order)} /></p>
@@ -452,8 +455,11 @@ const flexGridMobile ={
             actionsContainerStyle={{textAlign:'center'}}
           >
           <div style={formContainer}>
-          <p style={Title}>Amount:</p>
-          <input type="number" name="quantity" min="1" max={this.state.activeOrder.stock} value={this.state.amount} onChange={this.handleAmount} style={amountNumber} ></input>
+          <p style={Title}>Months:</p>
+          <input type="number" name="quantity"
+          step={this.state.activeOrder.months} min={this.state.activeOrder.months} max={this.state.activeOrder.stock}
+          value={this.state.amount} onChange={this.handleAmount}
+          style={amountNumber} ></input>
           <p style={Title}>Comment:</p>
             <TextField style={orderCommentBox}
               onChange={this.handleOrderComment}
@@ -468,7 +474,7 @@ const flexGridMobile ={
           </Dialog>
           </div>
           </div>
-          <p style={del}><RaisedButton label="Delete Order"
+          <p style={del}><RaisedButton label="Delete Sub"
           backgroundColor="rgb(58, 31, 0)"
           labelColor="wheat"
           style={{display: 'flex', alignSelf: 'center', margin: '0 auto', marginBottom: '5px'}}
