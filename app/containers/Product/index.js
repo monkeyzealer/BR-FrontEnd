@@ -508,7 +508,6 @@ destroyProduct = () =>{
             <h1 style={productHeader}>{this.state.product.product}</h1>
             <div style={Content}>
             <p style={productContent}><b>Price:</b> ${this.state.product.price}</p>
-            <p style={productContent}><b>Stock:</b> {this.state.product.stock}</p>
             <p style={productContent}><b>Description:</b><br />{this.state.product.description}</p>
             {this.showMenu()}
             <div style={PurchaseBox}>
