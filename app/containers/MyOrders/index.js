@@ -201,11 +201,13 @@ export default class MyOrders extends React.PureComponent {
       width: "20%",  /* <-- more control */
     };
     const productTitle={
-    marginBottom: "10px",
-    textAlign: "center",
-    marginTop: "10px",
-    borderBottom: "2px solid black",
-    paddingBottom: "5px",
+      marginTop: "0",
+      marginBottom: "0.5em",
+      textAlign: "center",
+      borderBottom: "2px solid wheat",
+      background: "rgb(58, 31, 0)",
+      paddingBottom: "5px",
+      paddingTop: "5px",
     };
     const price={
       textAlign: "center",

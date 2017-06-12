@@ -241,12 +241,17 @@ return(
       width: "100%",
       height: "auto",
       overflow: "hidden",
-      padding: "0.5em"
+      paddingBottom: "0.5em"
     };
     const productTitle={
-    marginBottom: "0",
+    marginTop: "10px",
+    marginBottom: "0.5em",
     textAlign: "center",
-    marginTop: "10px"
+    borderBottom: "2px solid wheat",
+    borderTop: "2px solid wheat",
+    background: "rgb(58, 31, 0)",
+    paddingBottom: "5px",
+    paddingTop: "5px",
     };
     const price={
       textAlign: "center",
