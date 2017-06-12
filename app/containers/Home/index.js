@@ -409,7 +409,7 @@ const topLinkMobile={
             <h3 style={FAQTitle}>Who is Box Robot for? Do I have to know Programing</h3>
             <p style={FAQParagraph}>
             Anyone - from beginners to experienced super makers - can have fun and learn new skills building Robots with our kits and step-by-step instructions.
-            No Robots knowledge is needed. The assembly instructions are all presented step-by-step via written and video tools on our Learning Platform.
+            No Robotics knowledge is needed. The assembly instructions are all presented step-by-step via written and video tools on our Learning Platform.
             </p>
             <h3 style={FAQTitle}>What type of subscription plans do you offer?</h3>
             <p style={FAQParagraph}>
