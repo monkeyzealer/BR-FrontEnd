@@ -103,9 +103,9 @@ storeComment = () =>{
     }
   }.bind(this))
 }
-deleteComment = () =>{
+deleteComment = (id) =>{
   var _this = this;
-  fetch("http://boxrobot.codemonkeytestsites.com/api/deleteComment/" + this.props.params.id + "?token=" + this.state.token, {
+  fetch("http://boxrobot.codemonkeytestsites.com/api/deleteComment/" + id + "?token=" + this.state.token, {
     method: "post",
     headers:{"Authorization":"bearer "+this.state.token}
   })
@@ -116,7 +116,7 @@ deleteComment = () =>{
     if(json.success)
     {
       alert(json.success);
-      _this.context.router.push("/store");
+      window.location.reload();
     }
     else if(json.error)
     {
@@ -141,7 +141,7 @@ destroyProduct = () =>{
   var _this = this;
   fetch("http://boxrobot.codemonkeytestsites.com/api/destroyProduct/" + this.props.params.id + "?token=" + this.state.token, {
     method: "post",
-    headers:{"Authorization":"bearer "+this.state.token}
+    headers:{"Authorization":"Bearer "+this.state.token}
   })
   .then(function(res){
     return res.json();
@@ -150,7 +150,7 @@ destroyProduct = () =>{
     if(json.success)
     {
       alert(json.success);
-      _this.context.router.push("/store");
+      window.location.reload();
     }
     else if(json.error)
     {
@@ -334,7 +334,7 @@ destroyProduct = () =>{
       display: "flex",
       flexWrap: "wrap",
       flexDirection: "row",
-      background: "burlywood",
+      background: "url(http://h4z.it/Image/c4d379_esign_1131-2.png)",
       color: "white",
     };
     const userComment={
@@ -343,7 +343,15 @@ destroyProduct = () =>{
       flexDirection: "column",
       borderTop: "1px solid black",
       padding: "15px",
+      background: "rgba(162, 124, 75,0.8)",
     };
+    const commentBox={
+      width: "100%",
+      borderTop: "1px solid black",
+      paddingTop: "20px",
+      color: "darkred",
+      background: "rgba(222, 184, 135,0.8)",
+    }
     const userName={
       textDecoration: "bold",
       marginBottom: "0",
@@ -367,12 +375,6 @@ destroyProduct = () =>{
       height: "255px",
       maxHeight:"255px"
     };
-    const commentBox={
-      width: "100%",
-      borderTop: "1px solid black",
-      paddingTop: "20px",
-      color: "darkred",
-    }
     const commentInputTitle={
       textIndent: "0.8em",
       marginBottom: "0",
@@ -419,6 +421,11 @@ destroyProduct = () =>{
       marginLeft: "5px",
       color: "black",
       padding: "5px",
+    }
+    const delComment={
+      border: "1px solid wheat",
+      background: "rgb(58, 31, 0)",
+      color: "wheat"
     }
     const styles = {
       customWidth: {
@@ -551,7 +558,7 @@ destroyProduct = () =>{
           <div style={commentContainer}>
             {this.state.comments.map((comment,i) => (
               <div style={userComment} key={i}>
-              <p style={deleteComment}><button style={{border:'1px solid white'}} onTouchTap={this.deleteComment}>X</button></p>
+              <p style={deleteComment}><button style={delComment} onTouchTap={() => this.deleteComment(comment.id)}>X</button></p>
                 <p style={timestamp}>{comment.commentDate}</p>
                 <h2 style={userName}>{comment.name}</h2>
                 <p style={comment}>{comment.body}</p>
@@ -630,7 +637,7 @@ destroyProduct = () =>{
           <div style={commentContainer}>
             {this.state.comments.map((comment,i) => (
               <div style={userComment} key={i}>
-              <p style={deleteComment}><button style={{border:'1px solid white'}} onTouchTap={this.deleteComment}>X</button></p>
+              <p style={deleteComment}><button style={delComment} onTouchTap={() => this.deleteComment(comment.id)}>X</button></p>
                 <p style={timestamp}>{comment.commentDate}</p>
                 <h2 style={userName}>{comment.name}</h2>
                 <p style={comment}>{comment.body}</p>

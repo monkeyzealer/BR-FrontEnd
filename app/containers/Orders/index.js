@@ -93,7 +93,7 @@ export default class Orders extends React.PureComponent {
   {
     method:"post",
     body:data,
-    headers:{"Authorization":"bearer"+this.state.token}
+    headers:{"Authorization":"Bearer "+this.state.token}
   })
   .then(function(res){
     return res.json()

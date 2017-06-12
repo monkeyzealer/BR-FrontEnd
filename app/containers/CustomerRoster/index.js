@@ -100,11 +100,15 @@ export default class CustomerRoster extends React.PureComponent {
       border: "1px solid black"
     };
     const userTitle={
-    marginBottom: "10px",
-    textAlign: "center",
-    marginTop: "5px",
-    borderBottom: "2px solid black",
-    paddingBottom: "5px",
+      width: "100%",
+      marginTop: "10px",
+      marginBottom: "0.5em",
+      textAlign: "center",
+      borderBottom: "2px solid wheat",
+      borderTop: "2px solid wheat",
+      background: "rgb(58, 31, 0)",
+      paddingBottom: "5px",
+      paddingTop: "5px",
     };
     const userInfo={
       textAlign: "center",

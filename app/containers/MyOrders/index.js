@@ -104,7 +104,7 @@ export default class MyOrders extends React.PureComponent {
     var _this = this;
     fetch("http://boxrobot.codemonkeytestsites.com/api/destroyOrder/" + id + "?token=" + this.state.token, {
       method: "post",
-      headers:{"Authorization":"bearer "+this.state.token}
+      headers:{"Authorization":"Bearer "+this.state.token}
     })
     .then(function(res){
       return res.json();
